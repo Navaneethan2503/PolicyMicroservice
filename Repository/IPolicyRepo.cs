@@ -14,5 +14,7 @@ namespace PolicyMicroservice.Repository
         public IEnumerable<ProviderPolicy> GetChainOfProviders(int policyNo);
         public string GetEligibleBenefits(int policyId,int memberId);
         public double GetEligibleClaimAmount(int policyId, int memberId, int benefitId);
+
+        public MemberPolicy issuePolicy(int memberId, int policyId, int policyNo, int benefitId, DateTime subscriptionDate, int tenure, double capAmountBenefits);
     }
 }

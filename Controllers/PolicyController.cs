@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PolicyMicroservice.Repository;
+using PolicyMicroservice.Models;
 
 namespace PolicyMicroservice.Controllers
 {
@@ -126,8 +127,16 @@ namespace PolicyMicroservice.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<ActionResult<MemberPolicy>> issuePolicy(int memberId, int policyId, int policyNo, int benefitId, DateTime subscriptionDate, int tenure, double capAmountBenefits)
+        {
+            var issuePolicy = _policyRepository.issuePolicy(memberId, policyId, policyNo, benefitId,subscriptionDate,tenure,capAmountBenefits);
+            return Ok(issuePolicy);
+        }
 
-        
-            
+
+
+
+
     }
 }

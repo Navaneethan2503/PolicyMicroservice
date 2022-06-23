@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
+using PolicyMicroservice.Models;
 
 namespace PolicyMicroservice.Repository
 {
@@ -118,7 +119,21 @@ namespace PolicyMicroservice.Repository
 
         }
 
-
+        public MemberPolicy issuePolicy(int memberId, int policyId, int policyNo, int benefitId, DateTime subscriptionDate, int tenure, double capAmountBenefits)
+        {
+            MemberPolicy memberPolicy = new MemberPolicy()
+            {
+                MemberId = memberId,
+                PolicyId = policyId,
+                PolicyNo = policyNo,
+                BenefitId = benefitId,
+                SubscriptionDate = subscriptionDate,
+                Tenure = tenure,
+                CapAmountBenefits = capAmountBenefits
+            };
+            PolicyData.memberpolicyList.Add(memberPolicy);
+            return memberPolicy;
+        }
 
     }
 }
