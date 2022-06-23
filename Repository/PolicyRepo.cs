@@ -135,5 +135,9 @@ namespace PolicyMicroservice.Repository
             return memberPolicy;
         }
 
+        public MemberPolicy getPolicyDetails(int policyId)
+        {
+            return PolicyData.memberpolicyList.Where(m => m.PolicyId == policyId).FirstOrDefault();
+        }
     }
 }

@@ -134,6 +134,13 @@ namespace PolicyMicroservice.Controllers
             return Ok(issuePolicy);
         }
 
+        //o	GET: /getPolicyDetails (Input: Policy ID) | Output: Member_Policy
+        [HttpGet]
+        public async Task<ActionResult<MemberPolicy>> getPolicyDetails(int policyId)
+        {
+            var memberPolicy = _policyRepository.getPolicyDetails(policyId);
+            return Ok(memberPolicy);
+        }
 
 
 

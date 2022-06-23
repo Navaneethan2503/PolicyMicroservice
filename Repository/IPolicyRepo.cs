@@ -15,6 +15,8 @@ namespace PolicyMicroservice.Repository
         public string GetEligibleBenefits(int policyId,int memberId);
         public double GetEligibleClaimAmount(int policyId, int memberId, int benefitId);
 
+        public MemberPolicy getPolicyDetails(int policyId);
         public MemberPolicy issuePolicy(int memberId, int policyId, int policyNo, int benefitId, DateTime subscriptionDate, int tenure, double capAmountBenefits);
     }
+
 }
